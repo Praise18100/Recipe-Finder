@@ -1,0 +1,14 @@
+:root {
+  --primary: #c5a47e;   /* buttons, highlights */
+  --secondary: #222222; /* headers, nav */
+  --accent: #9e6d4e;    /* links, badges */
+  --light: #f8f5f0;     /* background */
+  --text: #333333;      /* body text */
+}
+
+
+body {
+  background-color: var(--light);
+  color: var(--text);
+  font-family: sans-serif;
+}
