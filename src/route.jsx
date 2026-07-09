@@ -1,7 +1,9 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import Navbar from './components/layout/navbar';
-import Footer from './components/layout/footer';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import Home from './pages/homePage';
+import FindRecipe from './pages/findRecipePage';
+import Recipe from './pages/recipePage';
 import './index.css';
 import Error404 from './pages/error404';
 import Dashboard from './pages/dashboard';
@@ -25,7 +27,8 @@ const router = createBrowserRouter([
     element: <RootLayout />, 
     children: [
       { path: '/', element: <Home /> },
-      
+      { path: '/recipes', element: <FindRecipe /> },
+      { path: '/recipes/:id', element: <Recipe /> },
     ],
   },
   {

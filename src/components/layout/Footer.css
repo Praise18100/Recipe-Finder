@@ -1,0 +1,152 @@
+.footer{
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 60px 20px 30px;
+  margin-top: auto;
+  border-top: 1px solid #333;
+}
+
+.footer-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.footer-column h2,
+.footer-column h3{
+  color: #f7f2ee;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.footer-column h2::after,
+.footer-column h3::after{
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #f4a261;
+  margin-top: 8px;
+}
+
+.footer-column p{
+  line-height: 1.6;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  color: #908b8b;
+}
+
+.social-icons{
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons svg{
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.social-icons svg:hover{
+  color: #f4a261;
+  transform: scale(1.2);
+}
+
+/* Links */
+.footer-column ul{
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li{
+  margin-bottom: 12px;
+  opacity: 0.9;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-column ul li:hover{
+  color: #f4a261;
+}
+
+/* Newsletter */
+.newsletter{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter input{
+  padding: 14px 16px;
+  border: none;
+  border-radius: 6px;
+  color: rgb(72, 71, 71);
+  font-size: 1rem;
+}
+
+.newsletter input::placeholder{
+  color: #767474;
+}
+
+.newsletter button{
+  padding: 14px 24px;
+  width: 50%;
+  background-color: #f4a261;
+  color: #dbc0c0;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.newsletter button:hover{
+  background-color: #e08c4e;
+  transform: translateY(-2px);
+}
+
+/* Bottom Bar */
+.footer-bottom{
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .footer{
+    padding: 50px 15px 25px;
+  }
+  
+  .footer-container{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+  
+  .footer-column h2,
+  .footer-column h3{
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px){
+  .footer{
+    padding: 40px 12px 20px;
+  }
+  
+  .social-icons{
+    gap: 15px;
+  }
+  
+  .social-icons svg{
+    font-size: 1.7rem;
+  }
+}
