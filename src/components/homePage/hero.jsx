@@ -1,4 +1,4 @@
-import './hero.css';
+import "./hero.css";
 
 export default function Hero() {
   return (
@@ -6,8 +6,8 @@ export default function Hero() {
       <div className="hero-content">
         <h1>Find the Perfect Recipes to Match Your Cravings</h1>
         <p>
-          Find the perfect dish for every craving — from quick weekday meals to gourmet delights. 
-          Search, save, and savor recipes made just for you.
+          Find the perfect dish for every craving — from quick weekday meals to
+          gourmet delights. Search, save, and savor recipes made just for you.
         </p>
         <div className="hero-actions">
           <button className="btn-primary">Find Recipe</button>
