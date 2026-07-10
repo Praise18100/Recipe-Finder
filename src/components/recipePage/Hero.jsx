@@ -3,25 +3,24 @@ import backgroundImage from "../../assets/heroR.jpg";
 
 export default function Hero() {
   return (
-    <section 
+    <section
       className="hero"
       style={{
-        backgroundImage: `url(${backgroundImage})`
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      <div className="hero-overlay"></div>
-      
+      <div className="hero-overlay" />
+
       <div className="hero-container">
-        {/* Content on the RIGHT side - matching your screenshot */}
         <div className="hero-content">
           <div className="recipe-header">
-            <h1>Banana &amp; Blueberry French Toast</h1>
+            <h1>Banana &amp; Blueberry <br />French Toast</h1>
           </div>
 
           <div className="ingredients">
             <h3>Ingredients:</h3>
-            
-            <div className="ingredients-section">
+
+            <div className="ingredients-group">
               <h4>For the French Toast:</h4>
               <ul>
                 <li>3 slices of sandwich bread (preferably slightly stale or thick-cut)</li>
@@ -33,7 +32,7 @@ export default function Hero() {
               </ul>
             </div>
 
-            <div className="ingredients-section">
+            <div className="ingredients-group">
               <h4>Toppings:</h4>
               <ul>
                 <li>1 banana (sliced)</li>

@@ -1,7 +1,7 @@
-import "./testimonials.css";
+import "./review.css";
 import avatar from "../../assets/avatar.png";
 
-export default function Testimonials() {
+export default function Review() {
   return (
     <section className="review-section">
       <div className="review-overlay">
@@ -18,7 +18,7 @@ export default function Testimonials() {
           <div className="review-user">
             <img src={avatar} alt="Alicia Rain" className="review-avatar" />
             <div className="user-details">
-              <h4>Alicia Rai</h4>
+              <h4>Alicia Rain</h4>
               <span>Food Critic</span>
             </div>
           </div>

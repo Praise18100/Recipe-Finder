@@ -1,8 +1,8 @@
 import Hero from '../components/homePage/hero';
 import RecipeFinder from '../components/homePage/recipeFinder';
 import FoodRecipes from '../components/homePage/foodRecipes';
-import Testimonials from '../components/homePage/testimonials';
-import ContactForm from '../components/homePage/contactForm';
+import Review from '../components/common/review';
+import ContactForm from '../components/common/contactForm';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <RecipeFinder />
       <FoodRecipes />
-      <Testimonials />
+      <Review />
       <ContactForm />
     </div>
   );

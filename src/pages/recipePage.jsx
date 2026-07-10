@@ -1,15 +1,15 @@
-import Hero from "../components/recipe-layout/Hero";
-import RecipeSection from "../components/recipe-layout/RecipeSection";
-import Reviews from "../components/recipe-layout/Reviews";
-import Contact from "../components/recipe-layout/Contact";
+import Hero from "../components/recipePage/Hero";
+import RecipeSection from "../components/recipePage/RecipeSection";
+import Review from '../components/common/review';
+import ContactForm from '../components/common/contactForm';
 
 export default function Recipe() {
   return (
     <>
       <Hero />
       <RecipeSection />
-      <Reviews />
-      <Contact />
+      <Review />
+      <ContactForm />
     </>
   );
-}
+} 
