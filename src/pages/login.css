@@ -1,0 +1,120 @@
+.login-page {
+  min-height: 100vh;
+  background-color: #c99565;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-content {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 80px);
+  background-color: #faf6f0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(26, 26, 26, 0.1);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+.login-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.login-logo {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+.login-header h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 21px;
+  color: #1a1a1a;
+  margin: 0;
+}
+.login-card label {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a1a1a;
+  margin: 14px 0 6px;
+}
+.login-card label:first-of-type {
+  margin-top: 0;
+}
+.login-card input {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  color: #1a1a1a;
+  border: 1px solid rgba(26, 26, 26, 0.18);
+  border-radius: 6px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.login-card input:focus {
+  border-color: #c99565;
+}
+.login-card button {
+  margin-top: 28px;
+  background-color: #c99565;
+  color: #ffffff;
+  border: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.login-card button:hover {
+  background-color: #b87f4c;
+}
+.login-footer-text {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: rgba(26, 26, 26, 0.7);
+  margin: 24px 0 0;
+}
+.login-footer-text a {
+  color: #c99565;
+  font-weight: 700;
+  text-decoration: none;
+}
+.login-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-page {
+    padding: 16px;
+  }
+  .login-card {
+    padding: 32px 24px;
+  }
+}

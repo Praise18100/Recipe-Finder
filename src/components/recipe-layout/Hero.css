@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 140vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(26, 26, 26, 0.05) 0%,
+    rgba(26, 26, 26, 0.35) 45%,
+    rgba(26, 26, 26, 0.72) 75%,
+    rgba(26, 26, 26, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-content {
+  max-width: 500px;
+  color: #faf6f0;
+  padding: 2rem 0;
+}
+
+.recipe-header h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1.75rem;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.ingredients h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+  color: #e8c9a0;
+  letter-spacing: 0.02em;
+}
+
+.ingredients-section {
+  margin-bottom: 1.5rem;
+}
+
+.ingredients-section h4 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+  color: #ffffff;
+}
+
+.ingredients-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ingredients-section li {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(250, 246, 240, 0.92);
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/* Small terracotta dash instead of a default bullet, ties back to your accent color */
+.ingredients-section li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  background-color: #c99565;
+  border-radius: 50%;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-container {
+    justify-content: center;
+    padding: 0 6%;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.55) 0%,
+      rgba(26, 26, 26, 0.85) 100%
+    );
+  }
+
+  .recipe-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .ingredients h3 {
+    font-size: 1.15rem;
+  }
+}
