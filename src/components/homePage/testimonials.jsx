@@ -18,7 +18,7 @@ export default function Testimonials() {
           <div className="review-user">
             <img src={avatar} alt="Alicia Rain" className="review-avatar" />
             <div className="user-details">
-              <h4>Alicia Rain</h4>
+              <h4>Alicia Rai</h4>
               <span>Food Critic</span>
             </div>
           </div>
