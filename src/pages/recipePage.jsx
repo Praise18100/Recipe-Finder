@@ -1,6 +1,6 @@
 import Hero from "../components/recipePage/Hero";
 import RecipeSection from "../components/recipePage/RecipeSection";
-import Review from '../components/common/review';
+import Reviews from "../components/recipePage/Reviews";
 import ContactForm from '../components/common/contactForm';
 
 export default function Recipe() {
@@ -8,7 +8,7 @@ export default function Recipe() {
     <>
       <Hero />
       <RecipeSection />
-      <Review />
+      <Reviews />
       <ContactForm />
     </>
   );

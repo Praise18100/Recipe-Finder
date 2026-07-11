@@ -1,6 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 import "./foodRecipes.css";
-import burgerImg from "../../assets/burger.png";
+import burgerImg from "../../assets/burgers.png";
 
 export default function FoodRecipes() {
   const recipes = Array(4).fill({
@@ -14,7 +14,7 @@ export default function FoodRecipes() {
       <div className="recipes-header">
         <h2>Food Recipes</h2>
         <p>
-          Delicious meals made simple - filter by cravings, cuisine, time, or
+          Delicious meals made simple – filter by cravings, cuisine, time, or
           dietary needs. Find recipes that match your unique taste.
         </p>
       </div>
@@ -23,7 +23,7 @@ export default function FoodRecipes() {
         <div className="search-wrapper">
           <input
             type="text"
-            placeholder="Search for recipe here..."
+            placeholder="Search for recipe here ..."
             className="search-input"
           />
           <FiSearch className="search-icon" />
@@ -34,7 +34,13 @@ export default function FoodRecipes() {
         {recipes.map((recipe, index) => (
           <div key={index} className="recipe-card">
             <div className="recipe-image-container">
-              <img src={burgerImg} alt={recipe.title} className="card-avatar" />
+              <div className="image-oval">
+                <img
+                  src={burgerImg}
+                  alt={recipe.title}
+                  className="card-avatar"
+                />
+              </div>
             </div>
             <div className="card-info">
               <h3>{recipe.title}</h3>

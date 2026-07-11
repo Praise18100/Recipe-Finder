@@ -1,4 +1,5 @@
 import "./hero.css";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -10,7 +11,9 @@ export default function Hero() {
           gourmet delights. Search, save, and savor recipes made just for you.
         </p>
         <div className="hero-actions">
-          <button className="btn-primary">Find Recipe</button>
+          <Link to="/recipe">
+          <button className="btn-primary" >Find Recipe</button>
+          </Link>
           <button className="btn-outline">Favorite Recipe</button>
         </div>
       </div>

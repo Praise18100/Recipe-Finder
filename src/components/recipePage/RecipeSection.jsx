@@ -1,5 +1,5 @@
 import "./RecipeSection.css";
-import Cburger from "../../assets/c-burger.jpg";
+import Cburger from "../../assets/c-burger.png";
 import { FaSearch } from "react-icons/fa";
 
 export default function RecipeSection() {

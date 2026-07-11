@@ -1,6 +1,6 @@
 import "./Reviews.css";
-import reviews from "../../assets/reviews.jpg";
-import alicia from "../../assets/alicia.jpg";
+import reviews from "../../assets/reviews.png";
+import alicia from "../../assets/alicia.png";
 
 export default function Reviews() {
   return (
