@@ -1,7 +1,14 @@
-export default function Home() {
+import FindRecipt from "./findRecipePage";
+
+
+function Home() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+ 
+      <FindRecipt />
+
+    </>
+  );
 }
+
+export default Home;
