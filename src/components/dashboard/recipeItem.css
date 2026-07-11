@@ -1,0 +1,119 @@
+
+
+.recipe-list{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+}
+
+.recipe-item{
+    display:grid;
+    grid-template-columns:180px 1fr 1fr;
+    align-items:center;
+    gap:50px;
+
+    padding:25px;
+    
+    border-radius:12px;
+   
+}
+
+.recipe-item img{
+    width:160px;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.recipe-info h3,
+.recipe-benefit h3{
+    font-family:"Cormorant Garamond", serif;
+    font-size:2rem;
+    color:var(--secondary);
+    margin-bottom:15px;
+}
+
+.recipe-info p,
+.recipe-benefit p{
+    color:#555;
+    line-height:1.8;
+    font-size:16px;
+}
+
+@media (max-width:768px){
+
+    .recipe-item{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:20px;
+        padding:25px;
+    }
+
+    .recipe-item img{
+        width:220px;
+        height:170px;
+        margin:0 auto;
+    }
+
+    .recipe-info,
+    .recipe-benefit{
+        width:100%;
+    }
+
+    .recipe-info h3,
+    .recipe-benefit h3{
+        font-size:1.8rem;
+        margin-bottom:10px;
+    }
+
+    .recipe-info p,
+    .recipe-benefit p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+}
+
+@media (max-width:430px){
+
+    .recipe-item{
+        padding:20px 18px;
+    }
+
+    .recipe-item img{
+        width:180px;
+        height:150px;
+    }
+
+    .recipe-info h3,
+    .recipe-benefit h3{
+        font-size:1.6rem;
+    }
+
+    .recipe-info p,
+    .recipe-benefit p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+}
+@media (max-width:375px){
+
+    .recipe-item img{
+        width:160px;
+        height:140px;
+    }
+
+    .recipe-info h3,
+    .recipe-benefit h3{
+        font-size:1.45rem;
+    }
+
+    .recipe-info p,
+    .recipe-benefit p{
+        font-size:14px;
+    }
+
+}

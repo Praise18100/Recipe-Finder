@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import "./navbar.css"
 
 function Navbar() {
 
