@@ -1,7 +1,7 @@
-import FindRecipeHero from "../components/findRecipe/FindRecipeHero";
-import RecipeList from "../components/findRecipe/RecipeList";
-import Testimonial from "../components/findRecipe/Testimonial";
-import Contact from "../components/findRecipe/Contact";
+import FindRecipeHero from "../components/findRecipe/findRecipeHero";
+import RecipeList from "../components/findRecipe/recipeList";
+import Testimonial from "../components/findRecipe/testimonial";
+import Contact from "../components/findRecipe/contact";
 
 function FindRecipe() {
   return (
