@@ -1,0 +1,142 @@
+.review-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+              url('../../assets/review.png') center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+ 
+}
+
+.review-overlay {
+  width: 100%;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.review-overlay h2 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.review-overlay h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 38%;
+  width: 24%;
+  height: 2px;
+  background-color: var(--accent, #c5a880);
+}
+
+.review-overlay .subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #dddddd;
+  margin: 16px 0 50px 0;
+  font-weight: 400;
+}
+
+.review-card {
+  background: rgba(44, 57, 75, 0.55); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 40px 48px;
+  border-radius: 28px;
+  max-width: 650px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.review-card .quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  align-self: flex-end;
+  text-align: right;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.review-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.user-details h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--accent, #c5a880);
+  margin: 0;
+  font-weight: 600;
+}
+
+.user-details span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .review-section {
+    min-height: auto;
+  }
+  
+  .review-overlay {
+    padding: 60px 24px;
+  }
+
+  .review-overlay h2 {
+    font-size: 2.4rem;
+  }
+
+  .review-card {
+    padding: 32px 24px;
+  }
+
+  .review-card .quote {
+    font-size: 1.1rem;
+  }
+
+  .review-user {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-self: center;
+    gap: 12px;
+  }
+}
