@@ -1,8 +1,8 @@
-import Hero from '../components/homePage/hero';
-import RecipeFinder from '../components/homePage/recipeFinder';
-import FoodRecipes from '../components/homePage/foodRecipes';
-import Review from '../components/common/review';
-import ContactForm from '../components/common/contactForm';
+import Hero from "../components/homePage/hero";
+import RecipeFinder from "../components/homePage/recipeFinder";
+import FoodRecipes from "../components/homePage/foodRecipes";
+import Review from "../components/common/review";
+import ContactForm from "../components/common/contactForm";
 
 export default function Home() {
   return (
