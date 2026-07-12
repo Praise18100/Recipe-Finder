@@ -1,16 +1,19 @@
 import "./footer.css";
+import { Link } from "react-router-dom";
 import { FaFacebook, FaWhatsapp, FaTiktok, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        
         {/* RecipeFinder Column */}
         <div className="footer-column">
           <h2>RecipeFinder</h2>
-          <p>From quick bites to gourmet plates, discover recipes that make every meal unforgettable.</p>
-          
+          <p>
+            From quick bites to gourmet plates, discover recipes that make every
+            meal unforgettable.
+          </p>
+
           <div className="social-icons">
             <FaFacebook />
             <FaWhatsapp />
@@ -30,24 +33,43 @@ export default function Footer() {
         {/* Links Column */}
         <div className="footer-column">
           <h3>Links</h3>
+
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Recipes</li>
-            <li>My Favorites</li>
-          </ul>
+
+  <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/recipe">About</Link>
+        </li>
+
+<li>
+    <Link to="/dashboard">Dashboard</Link>
+  </li>
+
+        <li>
+          <Link to="/findRecipe">Find Recipe</Link>
+        </li>
+        <li>
+          <Link to="/testimonials">Testimonials</Link>
+        </li>
+
+        <li> <Link to="/login">Login</Link> </li>
+        
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+
         </div>
 
         {/* Newsletter Column */}
         <div className="footer-column">
           <h3>Newsletter</h3>
           <p>Subscribe to our newsletter to stay updated</p>
-          
+
           <div className="newsletter">
-            <input 
-              type="email" 
-              placeholder="Enter Your Email address..." 
-            />
+            <input type="email" placeholder="Enter Your Email address..." />
             <button>Subscribe</button>
           </div>
         </div>
