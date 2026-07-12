@@ -1,9 +1,9 @@
-import "./recipeFinder.css";
+import "./about.css";
 import aboutImg from "../../assets/about.png";
 
-export default function RecipeFinder() {
+export default function About() {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-grid">
         <div className="about-image-container">
           <img

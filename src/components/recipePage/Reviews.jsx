@@ -4,7 +4,7 @@ import alicia from "../../assets/alicia.png";
 
 export default function Reviews() {
   return (
-    <section className="reviews" style={{ backgroundImage: `url(${reviews})` }}>
+    <section className="reviews" style={{ backgroundImage: `url(${reviews})` }} id="testimonial">
       <div className="overlay">
         <h2>Happy Users Review</h2>
 

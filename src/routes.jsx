@@ -7,8 +7,6 @@ import FindRecipe from "./pages/findRecipe";
 import Error404 from "./pages/error404";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
-import Testimonials from "./components/findRecipe/testimonial";
-import Contact from "./components/common/contactForm";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +16,6 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/recipe", element: <Recipe /> },
       { path: "/findRecipe", element: <FindRecipe /> },
-      { path: "/testimonials", element: <Testimonials /> },
-      { path: "/contact", element: <Contact /> },
     ],
   },
 

@@ -1,8 +1,26 @@
 import "./footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook, FaWhatsapp, FaTiktok, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
+  const handleScrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", `#${sectionId}`);
+    }
+  };
+
+  const handleNavigateToTop = (e, path) => {
+    e.preventDefault();
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -35,32 +53,37 @@ export default function Footer() {
           <h3>Links</h3>
 
           <ul>
+            <li>
+              <Link to="/" onClick={(e) => handleNavigateToTop(e, "/")}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <a
+                href="#about"
+                onClick={(e) => handleScrollToSection(e, "about")}
+              >
+                About
+              </a>
+            </li>
 
-  <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/recipe">About</Link>
-        </li>
-
-<li>
-    <Link to="/dashboard">Dashboard</Link>
-  </li>
-
-        <li>
-          <Link to="/findRecipe">Find Recipe</Link>
-        </li>
-        <li>
-          <Link to="/testimonials">Testimonials</Link>
-        </li>
-
-        <li> <Link to="/login">Login</Link> </li>
-        
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-
+            <li>
+              <Link
+                to="/findRecipe"
+                onClick={(e) => handleNavigateToTop(e, "/findRecipe")}
+              >
+                Recipe
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/recipe"
+                onClick={(e) => handleNavigateToTop(e, "/recipe")}
+              >
+                My Favourite
+              </Link>
+            </li>
+          </ul>
         </div>
 
         {/* Newsletter Column */}

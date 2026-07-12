@@ -1,5 +1,5 @@
 import Hero from '../components/homePage/hero';
-import RecipeFinder from '../components/homePage/recipeFinder';
+import About from '../components/homePage/about';
 import FoodRecipes from '../components/homePage/foodRecipes';
 import Review from '../components/common/review';
 import ContactForm from '../components/common/contactForm';
@@ -8,7 +8,7 @@ import ContactForm from '../components/common/contactForm';
   return (
     <div className="homepage-wrapper">
       <Hero />
-      <RecipeFinder />
+      <About/>
       <FoodRecipes />
       <Review />
       <ContactForm />

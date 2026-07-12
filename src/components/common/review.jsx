@@ -3,7 +3,7 @@ import avatar from "../../assets/avatar.png";
 
 export default function Review() {
   return (
-    <section className="review-section">
+    <section className="review-section" id="testimonial">
       <div className="review-overlay">
         <h2>Happy Users Review</h2>
         <p className="subtitle">

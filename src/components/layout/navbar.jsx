@@ -6,6 +6,18 @@ import "./navbar.css";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleScrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", `#${sectionId}`);
+    }
+
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -18,16 +30,28 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/recipe">About</Link>
+          <a href="#about" onClick={(e) => handleScrollToSection(e, "about")}>
+            About
+          </a>
         </li>
         <li>
-          <Link to="/findRecipe">Find Recipe</Link>
+          <Link to="/recipe">My-Recipe</Link>
         </li>
         <li>
-          <Link to="/testimonials">Testimonials</Link>
+          <a
+            href="#testimonial"
+            onClick={(e) => handleScrollToSection(e, "testimonial")}
+          >
+            Testimonials
+          </a>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <a
+            href="#contactForm"
+            onClick={(e) => handleScrollToSection(e, "contactForm")}
+          >
+            Contact
+          </a>
         </li>
       </ul>
 
