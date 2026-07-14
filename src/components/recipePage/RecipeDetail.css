@@ -1,0 +1,144 @@
+/* Recipe Detail — dynamic view when recipe id is in the URL */
+
+.recipe-detail-loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.recipe-detail-wrapper {
+  width: 85%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Top section: image + meta */
+.recipe-detail-top {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.recipe-detail-img {
+  width: 320px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.recipe-detail-meta {
+  flex: 1;
+}
+
+.recipe-detail-category {
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.recipe-detail-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.8rem;
+  color: var(--secondary);
+  margin: 10px 0 14px;
+  line-height: 1.2;
+}
+
+/* Override the ::after underline for the detail view */
+.recipe-detail-name::after {
+  display: none;
+}
+
+.recipe-detail-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+/* Body: ingredients + instructions side by side */
+.recipe-detail-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+.recipe-detail-ingredients h3,
+.recipe-detail-instructions h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.recipe-detail-ingredients ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-detail-ingredients ul li {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  padding: 8px 0;
+  border-bottom: 1px solid #f0ebe3;
+  line-height: 1.5;
+}
+
+.recipe-detail-instructions ol {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.recipe-detail-instructions ol li {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  padding: 8px 0;
+  line-height: 1.8;
+  border-bottom: 1px solid #f0ebe3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .recipe-detail-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .recipe-detail-img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .recipe-detail-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .recipe-detail-name {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-detail-wrapper {
+    width: 92%;
+  }
+
+  .recipe-detail-name {
+    font-size: 1.7rem;
+  }
+}
