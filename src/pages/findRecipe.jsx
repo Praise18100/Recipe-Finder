@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import FindRecipeHero from "../components/findRecipe/findRecipeHero";
 import RecipeList from "../components/findRecipe/recipeList";
 import Testimonial from "../components/findRecipe/testimonial";
 import Contact from "../components/findRecipe/contact";
 import SearchResults from "../components/findRecipe/searchResults";
 
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
+console.log("[RecipeFinder] API_BASE =", API_BASE);
+
 function FindRecipe() {
-  const [query, setQuery] = useState("");
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get("q") || "";
+  const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Don't search if query is empty — clear results
@@ -17,19 +24,25 @@ function FindRecipe() {
       return;
     }
 
+    setLoading(true);
+    setError(null);
+
     // Debounce: wait 500ms after user stops typing before fetching
     const debounce = setTimeout(async () => {
-      setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/recipes/search?q=${encodeURIComponent(query)}`
+          `${API_BASE}/api/recipes/search?q=${encodeURIComponent(query)}`
         );
         const data = await response.json();
         if (data.success) {
           setResults(data.recipes);
+        } else {
+          setResults([]);
         }
-      } catch (error) {
-        console.error("Failed to fetch recipes:", error);
+      } catch (err) {
+        console.error("Failed to fetch recipes:", err);
+        setError("Could not reach the server. Make sure the backend is running.");
+        setResults([]);
       } finally {
         setLoading(false);
       }
@@ -41,6 +54,11 @@ function FindRecipe() {
   return (
     <div className="find-recipe">
       <FindRecipeHero query={query} onSearch={setQuery} />
+
+      {/* Error message if backend is unreachable */}
+      {error && (
+        <p style={{ color: "red", textAlign: "center", padding: "1rem" }}>{error}</p>
+      )}
 
       {/* Show search results only when user has typed something */}
       {(loading || results.length > 0) && (

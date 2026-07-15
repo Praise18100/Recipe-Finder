@@ -5,6 +5,8 @@ import "./RecipeDetail.css";
 import Cburger from "../../assets/c-burger.png";
 import { FaSearch } from "react-icons/fa";
 
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 export default function RecipeSection() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
@@ -19,7 +21,7 @@ export default function RecipeSection() {
     const fetchRecipe = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5000/api/recipes/${id}`);
+        const response = await fetch(`${API_BASE}/api/recipes/${id}`);
         const data = await response.json();
         if (data.success) {
           setRecipe(data.recipe);
