@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import "./RecipeSection.css";
 import "./RecipeDetail.css";
 import Cburger from "../../assets/c-burger.png";
@@ -10,6 +10,14 @@ const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
 export default function RecipeSection() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/findRecipe?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
 
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -96,8 +104,14 @@ export default function RecipeSection() {
       </p>
 
       <div className="recipe-search">
-        <input type="text" placeholder="Search for recipe here ..." />
-        <button>
+        <input
+          type="text"
+          placeholder="Search for recipe here ..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+        />
+        <button onClick={handleSearch}>
           <FaSearch />
         </button>
       </div>
