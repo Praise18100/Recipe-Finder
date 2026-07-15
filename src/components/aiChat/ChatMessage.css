@@ -1,0 +1,142 @@
+.chat-message {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.assistant {
+  justify-content: flex-start;
+}
+
+.chef-avatar-small {
+  font-size: 2rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f0e8e0;
+  flex-shrink: 0;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 70%;
+}
+
+.chat-message.user .message-content {
+  align-items: flex-end;
+}
+
+.message-text {
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.chat-message.user .message-text {
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 12px 4px 12px 12px;
+}
+
+.chat-message.assistant .message-text {
+  background-color: #f5f1eb;
+  color: var(--text);
+  border-radius: 4px 12px 12px 12px;
+}
+
+.recipe-card {
+  background-color: #fff;
+  border: 1px solid #e8e0d6;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 100%;
+}
+
+.recipe-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--text);
+}
+
+.recipe-details {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.recipe-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #f5f1eb;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.message-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.message-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .message-content {
+    max-width: 85%;
+  }
+
+  .message-text {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .recipe-card {
+    padding: 12px;
+  }
+
+  .recipe-card h4 {
+    font-size: 1rem;
+  }
+
+  .recipe-details {
+    font-size: 0.85rem;
+  }
+}

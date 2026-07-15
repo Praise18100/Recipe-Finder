@@ -1,7 +1,7 @@
-import "./about.css";
+import "./aboutSection.css";
 import aboutImg from "../../assets/about.png";
 
-export default function About() {
+export default function AboutSection() {
   return (
     <section className="about-section" id="about">
       <div className="about-grid">

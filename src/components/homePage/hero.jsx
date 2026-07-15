@@ -11,10 +11,12 @@ export default function Hero() {
           gourmet delights. Search, save, and savor recipes made just for you.
         </p>
         <div className="hero-actions">
-          <Link to="/recipe">
+          <Link to="/findRecipe">
           <button className="btn-primary" >Find Recipe</button>
           </Link>
-          <button className="btn-outline">Favorite Recipe</button>
+          <Link to="/ai-chat">
+          <button className="btn-outline">Chat with Hilda</button>
+          </Link>
         </div>
       </div>
     </section>

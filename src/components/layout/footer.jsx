@@ -5,16 +5,6 @@ import { FaFacebook, FaWhatsapp, FaTiktok, FaLinkedin } from "react-icons/fa";
 export default function Footer() {
   const navigate = useNavigate();
 
-  const handleScrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.pushState(null, "", `#${sectionId}`);
-    }
-  };
-
   const handleNavigateToTop = (e, path) => {
     e.preventDefault();
     navigate(path);
@@ -58,15 +48,11 @@ export default function Footer() {
                 Home
               </Link>
             </li>
-            <li>
-              <a
-                href="#about"
-                onClick={(e) => handleScrollToSection(e, "about")}
-              >
+          <li>
+              <Link to="/about" onClick={(e) => handleNavigateToTop(e, "/about")}>
                 About
-              </a>
+              </Link>
             </li>
-
             <li>
               <Link
                 to="/findRecipe"

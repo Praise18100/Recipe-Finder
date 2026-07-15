@@ -30,9 +30,9 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#about" onClick={(e) => handleScrollToSection(e, "about")}>
-            About
-          </a>
+         <li>
+          <Link to="/about">About</Link>
+        </li>
         </li>
         <li>
           <Link to="/recipe">My-Recipe</Link>
