@@ -1,0 +1,34 @@
+.ai-chat-container {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+  font-family: var(--font-family);
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .ai-chat-container {
+    flex-direction: column;
+  }
+
+  .ai-sidebar {
+    max-height: 200px;
+    border-bottom: 1px solid #e8e0d6;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-chat-container {
+    height: auto;
+  }
+
+  .chat-main {
+    min-height: calc(100vh - 200px);
+  }
+}

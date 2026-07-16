@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Hero from "../components/recipePage/Hero";
 import RecipeSection from "../components/recipePage/RecipeSection";
-import Reviews from "../components/recipePage/Reviews";
+import Testimonial from "../components/common/testimonial";
 import ContactForm from '../components/common/contactForm';
 
 export default function Recipe() {
@@ -17,7 +17,7 @@ export default function Recipe() {
     <div style={{ paddingTop: id ? "100px" : "0" }}>
       {!id && <Hero />}
       <RecipeSection />
-      <Reviews />
+      <Testimonial />
       <ContactForm />
     </div>
   );

@@ -1,10 +1,17 @@
 :root {
-  --primary: #c5a47e;   /* buttons, highlights */
+  --primary: #c5a47e; /* buttons, highlights */
   --secondary: #222222; /* headers, nav */
-  --accent: #9e6d4e;    /* links, badges */
-  --light: #f8f5f0;     /* background */
-  --text: #333333;      /* body text */
+  --accent: #9e6d4e; /* links, badges */
+  --light: #f8f5f0; /* background */
+  --text: #333333; /* body text */
+  --font-family: "Playfair Display", "Cormorant Garamond", "Georgia", serif;
+  --font-family-alt: "Cormorant Garamond", "Playfair Display", serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -14,10 +21,74 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-}
+
+
+
+
 
 body {
+  margin: 0;
   background-color: var(--light);
   color: var(--text);
-  font-family: sans-serif;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+body * {
+  font-family: var(--font-family) !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: 1.2;
+  margin: 0;
+}
+
+body p,
+body li,
+body button,
+body input,
+body textarea,
+body select,
+body a {
+  font-weight: var(--font-weight-regular) !important;
+}
+
+body a {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }

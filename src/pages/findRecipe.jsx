@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import FindRecipeHero from "../components/findRecipe/findRecipeHero";
 import RecipeList from "../components/findRecipe/recipeList";
-import Testimonial from "../components/findRecipe/testimonial";
-import Contact from "../components/findRecipe/contact";
+import Testimonial from "../components/common/testimonial";
+import Contact from "../components/common/contactForm";
 import SearchResults from "../components/findRecipe/searchResults";
-
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
 console.log("[RecipeFinder] API_BASE =", API_BASE);
 
@@ -18,16 +17,13 @@ function FindRecipe() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Don't search if query is empty — clear results
     if (query.trim() === "") {
       setResults([]);
       return;
     }
-
     setLoading(true);
     setError(null);
 
-    // Debounce: wait 500ms after user stops typing before fetching
     const debounce = setTimeout(async () => {
       try {
         const response = await fetch(
@@ -55,12 +51,10 @@ function FindRecipe() {
     <div className="find-recipe">
       <FindRecipeHero query={query} onSearch={setQuery} />
 
-      {/* Error message if backend is unreachable */}
       {error && (
         <p style={{ color: "red", textAlign: "center", padding: "1rem" }}>{error}</p>
       )}
 
-      {/* Show search results only when user has typed something */}
       {(loading || results.length > 0) && (
         <SearchResults results={results} loading={loading} />
       )}

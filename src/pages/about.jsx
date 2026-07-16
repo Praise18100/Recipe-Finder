@@ -1,19 +1,15 @@
-import Hero from "../components/homePage/hero";
 import AboutSection from "../components/homePage/aboutSection";
-import FoodRecipes from "../components/homePage/foodRecipes";
 import Testimonial from "../components/common/testimonial";
 import ContactForm from "../components/common/contactForm";
 
-function Home() {
+function About() {
   return (
     <div className="homepage-wrapper">
-      <Hero />
       <AboutSection />
-      <FoodRecipes />
-      <Testimonial/>
+      <Testimonial />
       <ContactForm />
     </div>
   );
 }
 
-export default Home;
+export default About;
