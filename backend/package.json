@@ -1,0 +1,19 @@
+{
+  "name": "recipe-finder-backend",
+  "version": "1.0.0",
+  "description": "Backend Search API for Recipe Finder",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "predev": "powershell -Command \"$p=(Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue).OwningProcess; if($p){ $p | Select-Object -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }\"",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

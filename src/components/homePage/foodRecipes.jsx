@@ -1,8 +1,19 @@
 import { FiSearch } from "react-icons/fi";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./foodRecipes.css";
 import burgerImg from "../../assets/burgers.png";
 
 export default function FoodRecipes() {
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      navigate(`/findRecipe?q=${encodeURIComponent(query)}`);
+    }
+  };
+
   const recipes = Array(4).fill({
     title: "Cheezy Burger",
     description:
@@ -25,8 +36,11 @@ export default function FoodRecipes() {
             type="text"
             placeholder="Search for recipe here ..."
             className="search-input"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
           />
-          <FiSearch className="search-icon" />
+          <FiSearch className="search-icon" onClick={handleSearch} style={{ cursor: "pointer" }} />
         </div>
       </div>
 
