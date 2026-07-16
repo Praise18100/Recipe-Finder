@@ -1,7 +1,7 @@
 import "./findRecipeHero.css";
 import { LuUserSearch } from "react-icons/lu";
 
-function FindRecipeHero({ query, onSearch }) {
+function FindRecipeHero() {
   return (
     <section className="recipe-title">
       <h1>Food Recipes</h1>
@@ -17,8 +17,6 @@ function FindRecipeHero({ query, onSearch }) {
         <input
           type="text"
           placeholder="Search for recipes here..."
-          value={query}
-          onChange={(e) => onSearch(e.target.value)}
         />
 
         <div className="search-icons">
@@ -29,4 +27,4 @@ function FindRecipeHero({ query, onSearch }) {
   );
 }
 
-export default FindRecipeHero;
+export default FindRecipeHero;
