@@ -1,7 +1,13 @@
 import "./findRecipeHero.css";
 import { LuUserSearch } from "react-icons/lu";
 
-function FindRecipeHero() {
+function FindRecipeHero({ query, onQueryChange, onSearch }) {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onSearch();
+    }
+  };
+
   return (
     <section className="recipe-title">
       <h1>Food Recipes</h1>
@@ -17,9 +23,12 @@ function FindRecipeHero() {
         <input
           type="text"
           placeholder="Search for recipes here..."
+          value={query}
+          onChange={(e) => onQueryChange(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
 
-        <div className="search-icons">
+        <div className="search-icons" onClick={onSearch} style={{ cursor: "pointer" }}>
           <LuUserSearch />
         </div>
       </div>

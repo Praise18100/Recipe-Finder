@@ -1,3 +1,4 @@
+import axios from "axios";
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
@@ -56,6 +57,41 @@ app.post("/api/contact", async (req, res) => {
   } catch (error) {
     console.error("Error sending email:", error);
     res.status(500).json({ error: "Failed to send email." });
+  }
+});
+
+// ==========================================
+// NEW ROUTE: Recipe search endpoint
+// ==========================================
+app.get("/api/recipes/search", async (req, res) => {
+  const { query } = req.query;
+  if (!query || query.trim() === "") {
+    return res.status(400).json({ error: "A search query is required." });
+  }
+  try {
+    const response = await axios.get(
+      "https://api.spoonacular.com/recipes/complexSearch",
+      {
+        params: {
+          apiKey: process.env.SPOONACULAR_API_KEY,
+          query: query,
+          number: 12, // how many results to return
+          addRecipeInformation: true, // includes summary, ready time, etc.
+        },
+      }
+    );
+    const recipes = response.data.results.map((recipe) => ({
+      id: recipe.id,
+      title: recipe.title,
+      image: recipe.image,
+      readyInMinutes: recipe.readyInMinutes,
+      servings: recipe.servings,
+      summary: recipe.summary,
+    }));
+    res.status(200).json({ success: true, recipes });
+  } catch (error) {
+    console.error("Error fetching recipes:", error.message);
+    res.status(500).json({ error: "Failed to fetch recipes from Spoonacular." });
   }
 });
 
